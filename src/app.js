@@ -45,11 +45,9 @@ app.get("/cotacoes", (req, res) => {
   const symbol = req.query.ativo.toUpperCase();
   cotacoes(symbol, (err, body) => {
     if (err) {
-      return res
-        .status(err.code)
-        .json({
-          error: { mensage: err.mensage, code: err.code },
-        });
+      return res.status(err.code).json({
+        error: { mensage: err.mensage, code: err.code },
+      });
     }
     res.status(200).json(body);
   });
@@ -71,6 +69,7 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("server is up on port 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`server is up on port ${port}`);
 });
