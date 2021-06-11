@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Cotações</title>
+  <link rel="icon" href="/img/icon.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="main-content">
+    {{> header}}
+    <p>Procure por um ativo</p>
+    <form action="">
+      <input type="text" placeholder="Informe um ativo">
+      <button>Buscar</button>
+    </form>
+    <h3></h3>
+    <p id='close'></p>
+    <p id='high'></p>
+    <p id='low'></p>
+    <p id='open'></p>
+  </div>
+  {{> footer}}
+</body>
+<script src="/js/app.js"></script>
+
+</html>
